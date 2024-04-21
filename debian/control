@@ -1,0 +1,25 @@
+Source: dde-widgets-weather-plugin
+Maintainer: zty199 <zty2864@gmail.com>
+Section: libdevel
+Priority: optional
+Build-Depends:
+ cmake,
+ debhelper (>= 9),
+ pkg-config,
+ qtchooser (>= 55-gc9562a1-1~),
+ qtbase5-dev,
+ qttools5-dev-tools,
+ libdtkcore-dev,
+ libdtkgui-dev,
+ libdtkwidget-dev,
+ dde-widgets-dev,
+ zlib1g-dev
+Standards-Version: 0.1
+Homepage: https://www.deepin.com
+
+Package: dde-widgets-weather-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+ dde-widgets
+Description: weather widget module of deepin desktop-environment
+ A simple weather plugin of dde-widgets, based on QWeather Web API.

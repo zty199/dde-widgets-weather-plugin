@@ -1,0 +1,7 @@
+#pragma once
+
+#define WEATHER_WIDGETS_NAMESPACE dwweather
+
+#define WEATHER_WIDGETS_BEGIN_NAMESPACE namespace dwweather {
+#define WEATHER_WIDGETS_END_NAMESPACE }
+#define WEATHER_WIDGETS_USE_NAMESPACE using namespace WEATHER_WIDGETS_NAMESPACE;
