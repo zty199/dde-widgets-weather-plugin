@@ -7,8 +7,7 @@
 
 DGUI_USE_NAMESPACE
 
-WEATHER_WIDGETS_BEGIN_NAMESPACE
-
+namespace dwweather {
 const int nIconSize = 84;
 
 WeatherDisplayWidget::WeatherDisplayWidget(QWidget *parent)
@@ -90,7 +89,7 @@ void WeatherDisplayWidget::paintText(QPainter &painter, QRect &rect)
     int height = painter.fontMetrics().lineSpacing();
     rect.setSize(QSize(width, height));
     rect.moveBottomLeft(rect.topLeft() - QPoint(0, 10));
-    painter.drawText(rect, Qt::AlignLeft, m_weather.text);
+    painter.drawText(rect, Qt::AlignLeft, text);
 
     painter.restore();
 }
@@ -101,7 +100,7 @@ void WeatherDisplayWidget::paintWindDirAndScale(QPainter &painter, QRect &rect)
 
     painter.setFont(Dtk::Widget::DFontSizeManager::instance()->t8());
     QString text = m_weather.isValid()
-                       ? tr("Wind Dir: %1 Wind Scale: %2").arg(m_weather.windDir, m_weather.windScale)
+                       ? tr("Wind Dir: %1 Scale: %2").arg(m_weather.windDir, m_weather.windScale)
                        : tr("Unknown");
     text = painter.fontMetrics().elidedText(text, Qt::ElideRight, this->rect().width() - blurRectXRadius() * 2);
     int width = painter.fontMetrics().horizontalAdvance(text) + blurRectXRadius() * 2;
@@ -118,5 +117,4 @@ void WeatherDisplayWidget::slotThemeTypeChanged(DGuiApplicationHelper::ColorType
     setMaskColor(themeType == DGuiApplicationHelper::DarkType ? DBlurEffectWidget::DarkColor : DBlurEffectWidget::LightColor);
     setMaskAlpha(0);
 }
-
-WEATHER_WIDGETS_END_NAMESPACE
+} // namespace dwweather

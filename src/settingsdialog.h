@@ -1,7 +1,5 @@
 #pragma once
 
-#include "global.h"
-
 #include <widgetsinterface.h>
 
 #include <DDialog>
@@ -10,8 +8,7 @@
 
 class QGridLayout;
 
-WEATHER_WIDGETS_BEGIN_NAMESPACE
-
+namespace dwweather {
 class SettingsDialog : public Dtk::Widget::DDialog
 {
     Q_OBJECT
@@ -48,5 +45,4 @@ private:
     Dtk::Widget::DLabel *m_webAPIKeyLabel = nullptr;
     Dtk::Widget::DLineEdit *m_webAPIKeyLineEdit = nullptr;
 };
-
-WEATHER_WIDGETS_END_NAMESPACE
+} // namespace dwweather

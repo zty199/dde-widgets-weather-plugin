@@ -10,8 +10,7 @@
 #include <DWidgetUtil>
 #include <DFrame>
 
-WEATHER_WIDGETS_BEGIN_NAMESPACE
-
+namespace dwweather {
 const QString websiteLinkTemplate = "<a href='%1' style='text-decoration: none; color: #0081FF;'>%2</a>";
 
 SettingsDialog::SettingsDialog(WIDGETS_NAMESPACE::WidgetHandler *handler, QWidget *parent)
@@ -149,5 +148,4 @@ void SettingsDialog::initConnections()
         }
     });
 }
-
-WEATHER_WIDGETS_END_NAMESPACE
+} // namespace dwweather

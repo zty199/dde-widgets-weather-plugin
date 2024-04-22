@@ -1,6 +1,4 @@
-set(PLUGIN_NAME dde-weatherwidget-plugin)
-
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Network)
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Network LinguistTools)
 find_package(Dtk REQUIRED COMPONENTS Core Gui Widget)
 find_package(DdeWidgets REQUIRED)
 find_package(PkgConfig REQUIRED)
@@ -35,6 +33,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     ${Zlib_LIBRARIES}
 )
 
+set(PLUGIN_NAME dde-weatherwidget-plugin)
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PLUGIN_NAME})
 
 install_dde_widgets_plugin(${PROJECT_NAME})

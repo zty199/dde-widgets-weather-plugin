@@ -8,8 +8,7 @@
 
 #include <QTranslator>
 
-WEATHER_WIDGETS_BEGIN_NAMESPACE
-
+namespace dwweather {
 WeatherWidget::~WeatherWidget()
 {
     if (!m_timer.isNull()) {
@@ -170,7 +169,7 @@ bool WeatherWidget::loadTranslator()
         qtl->deleteLater();
     }
 
-    return true;
+    return false;
 }
 
 void WeatherWidget::initConnections()
@@ -235,12 +234,12 @@ QString WeatherWidgetPlugin::title() const
 
 QString WeatherWidgetPlugin::description() const
 {
-    return tr("Display weather at different geographical locations");
+    return tr("Display weather at current geographical location");
 }
 
 QString WeatherWidgetPlugin::aboutDescription() const
 {
-    return tr("Viewing weather of multiple cities around the world");
+    return tr("Weather data is obtained base on QWeather API");
 }
 
 QIcon WeatherWidgetPlugin::logo() const
@@ -257,5 +256,4 @@ IWidget *WeatherWidgetPlugin::createWidget()
 {
     return new WeatherWidget;
 }
-
-WEATHER_WIDGETS_END_NAMESPACE
+} // namespace dwweather

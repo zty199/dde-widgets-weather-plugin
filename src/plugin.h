@@ -2,7 +2,6 @@
 
 #include "config.hpp"
 #include "data.hpp"
-#include "global.h"
 
 #include <widgetsinterface.h>
 
@@ -12,8 +11,7 @@
 
 WIDGETS_USE_NAMESPACE
 
-WEATHER_WIDGETS_BEGIN_NAMESPACE
-
+namespace dwweather {
 class WeatherDisplayWidget;
 class WeatherWidget : public QObject
     , public IWidget
@@ -85,5 +83,4 @@ public:
 
     QVector<IWidget::Type> supportTypes() const override { return {IWidget::Small}; }
 };
-
-WEATHER_WIDGETS_END_NAMESPACE
+} // namespace dwweather

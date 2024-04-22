@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.12)
 
 project(dde-widgets-weather-plugin)
 
@@ -16,3 +16,4 @@ endif ()
 include(GNUInstallDirs)
 
 add_subdirectory(src)
+add_subdirectory(translations)

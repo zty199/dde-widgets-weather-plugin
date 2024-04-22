@@ -1,13 +1,11 @@
 #pragma once
 
 #include "data.hpp"
-#include "global.h"
 
 #include <DBlurEffectWidget>
 #include <DGuiApplicationHelper>
 
-WEATHER_WIDGETS_BEGIN_NAMESPACE
-
+namespace dwweather {
 class WeatherDisplayWidget : public Dtk::Widget::DBlurEffectWidget
 {
     Q_OBJECT
@@ -35,5 +33,4 @@ private slots:
 private:
     WeatherNow m_weather;
 };
-
-WEATHER_WIDGETS_END_NAMESPACE
+} // namespace dwweather
