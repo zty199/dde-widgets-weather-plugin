@@ -1,6 +1,15 @@
+dde-widgets-weather-plugin (0.1-1) stable; urgency=medium
+
+  * Add Chinese translation
+  * Fix setting Web API KEY has no effect
+  * Modify part of descriptions
+
+ -- zty199 <zty2864@gmail.com>  Tue, 23 Apr 2024 16:44:00 +0800
+
+
 dde-widgets-weather-plugin (0.1) unstable; urgency=medium
 
-  * Init release
+  * Initial release
 
  -- zty199 <zty2864@gmail.com>  Sun, 21 Apr 2024 20:14:00 +0800
 
