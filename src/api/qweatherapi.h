@@ -12,10 +12,10 @@ class QWeatherAPIWorker;
 class QWeatherAPI : public QObject
 {
     Q_OBJECT
+    Q_DISABLE_COPY_MOVE(QWeatherAPI)
 
 public:
     QWeatherAPI();
-    Q_DISABLE_COPY_MOVE(QWeatherAPI)
     ~QWeatherAPI() override;
 
     static QWeatherAPI *instance();
@@ -58,10 +58,10 @@ private:
 class QWeatherAPIWorker : public QObject
 {
     Q_OBJECT
+    Q_DISABLE_COPY_MOVE(QWeatherAPIWorker)
 
 private:
     QWeatherAPIWorker() = default;
-    Q_DISABLE_COPY_MOVE(QWeatherAPIWorker)
     ~QWeatherAPIWorker() = default;
 
     QPair<bool, QString> parseLocation(const QByteArray &replyData);

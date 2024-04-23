@@ -92,14 +92,7 @@ void WeatherWidget::hideWidgets()
 
 void WeatherWidget::aboutToShutdown()
 {
-    /**
-     * FIXME: 计划在组件移除时存储 API KEY,
-     * 方便下次放入组件时使用
-     *
-     * 目前发现删除小组件时可能写入失败，
-     * 可能与配置文件操作顺序相关
-     */
-    Config::instance()->saveWebAPIKey();
+    QMetaObject::invokeMethod(Config::instance(), &Config::saveWebAPIKey, Qt::QueuedConnection);
 }
 
 bool WeatherWidget::enableSettings()
@@ -175,9 +168,9 @@ bool WeatherWidget::loadTranslator()
 void WeatherWidget::initConnections()
 {
     connect(QWeatherAPI::instance(), &QWeatherAPI::sigGetLocationFromIPFinished,
-            this, &WeatherWidget::slotGetLocationFromIPFinished, Qt::UniqueConnection);
+            this, &WeatherWidget::slotGetLocationFromIPFinished);
     connect(QWeatherAPI::instance(), &QWeatherAPI::sigGetWeatherNowFromLocation,
-            this, &WeatherWidget::slotGetWeatherNowFromLocation, Qt::UniqueConnection);
+            this, &WeatherWidget::slotGetWeatherNowFromLocation);
 }
 
 void WeatherWidget::updateWeatherNow(bool force)

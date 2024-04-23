@@ -24,13 +24,14 @@ WEATHER_WIDGETS_BEGIN_NAMESPACE
 class Config : public QObject
 {
     Q_OBJECT
+    Q_DISABLE_COPY_MOVE(Config)
 
 public:
-    Config() = default;
-    Q_DISABLE_COPY_MOVE(Config)
-    ~Config() = default;
-
-    static Config *instance();
+    static Config *instance()
+    {
+        static Config config;
+        return &config;
+    }
 
     QSettings *settings()
     {
@@ -88,15 +89,13 @@ public:
     }
 
 private:
+    Config() = default;
+    ~Config() = default;
+
+private:
     QSettings *m_settings = nullptr;
 
     QString m_webAPIKey = DEFAULT_WEB_API_KEY;
 };
-Q_GLOBAL_STATIC(Config, configMgr)
-
-inline Config *Config::instance()
-{
-    return configMgr;
-}
 
 WEATHER_WIDGETS_END_NAMESPACE

@@ -97,6 +97,7 @@ void SettingsDialog::saveSettings()
     m_handler->setValue(KEY_INTERVAL, m_updateIntervalLineEdit->text());
 
     Config::instance()->setWebAPIKey(m_webAPIKeyLineEdit->text());
+    QMetaObject::invokeMethod(Config::instance(), &Config::saveWebAPIKey, Qt::QueuedConnection);
 }
 
 void SettingsDialog::updateButtonEnabled()

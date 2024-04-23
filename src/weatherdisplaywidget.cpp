@@ -100,7 +100,7 @@ void WeatherDisplayWidget::paintWindDirAndScale(QPainter &painter, QRect &rect)
 
     painter.setFont(Dtk::Widget::DFontSizeManager::instance()->t8());
     QString text = m_weather.isValid()
-                       ? tr("Wind Dir: %1 Scale: %2").arg(m_weather.windDir, m_weather.windScale)
+                       ? tr("Wind Dir: %1 Scale: %2").arg(m_weather.windDir).arg(m_weather.windScale)
                        : tr("Unknown");
     text = painter.fontMetrics().elidedText(text, Qt::ElideRight, this->rect().width() - blurRectXRadius() * 2);
     int width = painter.fontMetrics().horizontalAdvance(text) + blurRectXRadius() * 2;

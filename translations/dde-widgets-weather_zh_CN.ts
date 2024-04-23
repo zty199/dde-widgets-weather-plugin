@@ -77,17 +77,17 @@
 <context>
     <name>dwweather::WeatherWidgetPlugin</name>
     <message>
-        <location filename="../src/plugin.cpp" line="232"/>
+        <location filename="../src/plugin.cpp" line="225"/>
         <source>Weather</source>
         <translation>天气</translation>
     </message>
     <message>
-        <location filename="../src/plugin.cpp" line="237"/>
+        <location filename="../src/plugin.cpp" line="230"/>
         <source>Display weather at current geographical location</source>
         <translation>显示当前地理位置的天气</translation>
     </message>
     <message>
-        <location filename="../src/plugin.cpp" line="242"/>
+        <location filename="../src/plugin.cpp" line="235"/>
         <source>Weather data is obtained base on QWeather API</source>
         <translation>天气数据基于和风天气开发服务获取</translation>
     </message>
