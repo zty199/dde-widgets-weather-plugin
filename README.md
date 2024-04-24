@@ -31,6 +31,7 @@
 # Reference
  * [linuxdeepin/dde-widgets](https://github.com/linuxdeepin/dde-widgets)
  * [ShawZG/xWeather](https://github.com/ShawZG/xWeather)
+ * [ipbase Documentation](https://ipbase.com/docs)
  * [文档 | 和风天气开发服务](https://dev.qweather.com/docs)
 
 # License

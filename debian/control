@@ -15,7 +15,7 @@ Build-Depends:
  dde-widgets-dev,
  zlib1g-dev
 Standards-Version: 0.1
-Homepage: https://www.deepin.com
+Homepage: https://github.com/zty199/dde-widgets-weather-plugin
 
 Package: dde-widgets-weather-plugin
 Architecture: any
